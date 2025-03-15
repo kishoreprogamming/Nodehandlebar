@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <title>Apj Certificate</title>
+  <!-- <meta name="description"
+    content="Learn more about us, a trusted Security Guard Services Provider. At Nodrup Security Group, we prioritize your safety, ensuring peace of mind with our dependable services."> -->
+  {{!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"> --}}
+  <link rel="stylesheet" href="./css/style.css">
+  {{!-- <link rel="stylesheet" href="assets/plugins/fontawesome-free-6.1.1-web/css/all.min.css">--}}
+  {{!-- <link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-icon-180x180.png">  --}}
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="manifest.json">
+  <!-- ==============aos============ -->
+
+
+</head>
+
+<body>
+<div>
+<label>Name</label>
+  <input type="text" id="name" onkeyup="studentname()"/><span style="color:red" id="nameerror"></span>
+</div>
+<div>
+<label>Start Date</label>
+  <input type="date" id="start_date"   onchange="startingdate()" /><span style="color:red" id="start_dateerror"></span>
+</div>
+<div>
+<label>End Date</label>
+  <input type="date" id="end_date" onchange="startingdate()" disabled/><span style="color:red" id="end_dateerror"></span>
+</div>
+<div>
+  <input type="button" onclick="calculateDuration()" value="Sumbit"/>
+  <a href="index.hbs">start</a>
+</div>
+<div >
+{{!-- <div class="Certificate-sec">
+  <div class="content">
+    <div class="logo">
+      <img src="./images/apj-logo.png">
+    </div>
+    <h2>Certificate of Completion</h2>
+    <p class="paragraph-one">This certificate is awarded to</p>
+    <h1 id="headingname">[name]</h1>
+    <p class="paragraph-two" >has successfully completed the <span id="duration">[duration]</span><strong> Full Stack Development Course</strong><br/> at Dr APJ Dream Tech from <span id="start">[startdate]</span>  to <span  id="end">[enddate]</span>.<br/>
+      We commend their dedication and hard work throughout the program.</p>
+<div class="signature">
+  <img src="./images/founder_signature.png">
+</div >
+      <h3>Venkatesan Chandhirasekar</h3>
+      <p class="paragraph-three">Founder & CEO</p>
+
+  </div>
+  
+</div> --}}
+{{{body}}}
+</div>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/popper.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
+<script>
+  function studentname(){
+    var name = document.getElementById("name").value;
+var studentname=name.trim()
+ if(studentname){
+    if(studentname.length>=3){
+document.getElementById("nameerror").textContent ="";
+        document.getElementById("name").style ="";
+    }else{
+document.getElementById("nameerror").textContent = "Please Enter Your Full Name Atleast 3 char";
+      document.getElementById("name").style = "border:1px solid red"
+    }
+ }
+ else{
+document.getElementById("nameerror").textContent = "Please Enter Your Name";
+  document.getElementById("name").style = "border:1px solid red"
+ }
+console.log("studentname",studentname.length)
+  var headingname = document.getElementById("headingname").textContent;
+ if(studentname){
+    if(studentname.length>=3){
+      document.getElementById("nameerror").textContent ="";
+        document.getElementById("name").style ="";
+    if (headingname.includes("[name]")) {
+        document.getElementById("headingname").textContent = headingname.replace("[name]",studentname);      
+}
+
+console.log("-----1")
+
+}
+else{
+console.log("-----2")
+      document.getElementById("nameerror").textContent = "Please Enter Your Full Name Atleast 3 char";
+      document.getElementById("name").style = "border:1px solid red"
+    }
+    }
+else{
+console.log("-----3")
+
+  document.getElementById("nameerror").textContent = "Please Enter Your Name";
+  document.getElementById("name").style = "border:1px solid red"
+}
+  }
+  function startingdate(){
+    let startdate = document.getElementById("start_date").value;
+    document.getElementById("start").textContent=startdate;
+  document.getElementById("end_date").min=startdate;
+  if(startdate){
+    document.getElementById("end_date").disabled = false;
+    let enddate = document.getElementById("end_date").value;
+    document.getElementById("start_dateerror").textContent = "";
+document.getElementById("start_date").style = ""
+    document.getElementById("end").textContent=enddate;
+    if(startdate && enddate){
+    document.getElementById("start_date").disabled = true;
+    {{!-- document.getElementById("end_date").disabled = true; --}}
+    document.getElementById("end_dateerror").textContent = "";
+document.getElementById("end_date").style = ""
+    }
+  }else{
+    document.getElementById("end_date").disabled=true;
+  }
+  }
+  function calculateDuration() {
+    var name = document.getElementById("name").value;
+var studentname=name.trim()
+console.log("studentname",studentname.length)
+  var headingname = document.getElementById("headingname").textContent;
+ if(studentname){
+    if(studentname.length>=3){
+    if (headingname.includes("[name]")) {
+        document.getElementById("headingname").textContent = headingname.replace("[name]",studentname);
+        
+}
+document.getElementById("nameerror").textContent ="";
+        document.getElementById("name").style ="";
+}else{
+      document.getElementById("nameerror").textContent = "Please Enter Your Full Name Atleast 3 char";
+      document.getElementById("name").style = "border:1px solid red"
+    }
+    }
+else{
+  document.getElementById("nameerror").textContent = "Please Enter Your Name";
+  document.getElementById("name").style = "border:1px solid red"
+}
+    let startdate = document.getElementById("start_date").value;
+    let enddate = document.getElementById("end_date").value;
+    document.getElementById("start").textContent=startdate;
+    document.getElementById("end").textContent=enddate;
+    if(startdate){
+let startDate = new Date(startdate);
+if(enddate){
+     let endDate = new Date(enddate);
+     document.getElementById("end_date").min=startdate
+    let totalMonths = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
+    let totalDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+
+    if (endDate.getDate() < startDate.getDate()) {
+        totalMonths--;
+    }
+    let output = totalMonths >= 1 ? `${totalMonths}-months` : `${totalDays}-days`;
+    document.getElementById("duration").textContent = output;
+}else{
+  document.getElementById("end_dateerror").textContent = "Please Select End Date";
+document.getElementById("end_date").style = "border:1px solid red"
+}
+    }
+    else{
+document.getElementById("start_dateerror").textContent = "Please Select Start Date";
+document.getElementById("start_date").style = "border:1px solid red"
+    }
+  }
+</script>

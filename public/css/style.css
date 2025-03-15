@@ -1,0 +1,195 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: OpenSans-Bold;
+    src: url('../fonts/OpenSans-Bold.ttf') format("truetype")
+}
+
+@font-face {
+    font-family: OpenSans-Medium;
+    src: url('../fonts/OpenSans-Medium.ttf') format("truetype")
+}
+
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url('../fonts/OpenSans-Regular.ttf') format("truetype")
+}
+
+@font-face {
+    font-family: SpaceGrotesk-Medium;
+    src: url('../fonts/SpaceGrotesk-Medium.ttf') format("truetype")
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 1680px;
+    position: relative;
+
+
+
+}
+
+@media (max-width: 5120px) {
+    .container-new-big {
+        max-width: 100%;
+        padding: 0px 80px;
+    }
+}
+
+@media (max-width: 2000px) {
+    .container-new-big {
+        max-width: 100%;
+        padding: 0px 80px;
+    }
+}
+
+@media (max-width: 1800px) {
+    .container-new-big {
+        max-width: 100%;
+        padding: 0px 80px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .container-new-big {
+        max-width: 100%;
+        padding: 0px 80px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .container-new-big {
+        max-width: 100%;
+        padding: 0px 80px;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .container-new-big {
+        padding: 0 60px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .container-new-big {
+        padding: 0 40px;
+    }
+
+    .navbar_baner_section .aries_logo {
+        bottom: -280px;
+    }
+
+}
+
+@media only screen and (max-width: 560px) {
+    .container-new-big {
+        padding: 0 20px;
+    }
+}
+
+
+/* Certificate-sec */
+.Certificate-sec {
+    background-image: url(../images/certificatetemplate.png);
+    height: 800px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+}
+
+.Certificate-sec .content {
+    text-align: center;
+    top: 15%;
+    padding-top: 120px;
+}
+
+.Certificate-sec .content .logo {
+    height: 60px;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.Certificate-sec .content .logo img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.Certificate-sec .content h2 {
+    margin-top: 30px;
+    font-family: OpenSans-Medium;
+    font-weight: 500;
+    font-size: 40px;
+    color: #1A1A1A;
+
+}
+
+.Certificate-sec .content .paragraph-one {
+    font-family: OpenSans-Regular;
+    font-size: 22px;
+    color: #363636;
+    margin-top: 30px;
+}
+
+.Certificate-sec .content h1 {
+    color: #1A1A1A;
+    font-family: OpenSans-Bold;
+    font-size: 40px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.Certificate-sec .content .paragraph-two {
+    font-family: OpenSans-Regular;
+    font-size: 18px;
+    color: #363636;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.Certificate-sec .content .signature {
+    height: 60px;
+    width: 130px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.Certificate-sec .content .signature img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.Certificate-sec .content .signature::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: #1A1A1A;
+    width: 250px;
+    bottom: -20%;
+    left: -55%;
+}
+.Certificate-sec .content h3 {
+    margin-top: 30px;
+    font-family: OpenSans-Medium;
+    font-weight: 600;
+    font-size: 25px;
+    color: #1A1A1A;
+}
+.Certificate-sec .content .paragraph-three {
+    font-family: OpenSans-Regular;
+    font-size: 22px;
+    color: #363636;
+    line-height: 1.7;
+}
