@@ -7,71 +7,249 @@
   <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
   <title>Apj Certificate</title>
-  <link rel="stylesheet" href="./css/style.css">
+  {{!-- <link rel="stylesheet" href="./css/style.css"> --}}
   <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
   <link rel="manifest" href="manifest.json">
+  <style>
+
+@page {
+    size: A4 landscape;
+    margin: 0; /* Remove default margins */
+}
+
+body{
+   
+    width: 297mm; /* Exact A4 width */
+    height: 210mm; /* Exact A4 height */
+  overflow: hidden; 
+}
+    * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: OpenSans-Bold;
+    src: url('../fonts/OpenSans-Bold.ttf') format("truetype")
+}
+
+@font-face {
+    font-family: OpenSans-Medium;
+    src: url('../fonts/OpenSans-Medium.ttf') format("truetype")
+}
+
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url('../fonts/OpenSans-Regular.ttf') format("truetype")
+}
+
+@font-face {
+    font-family: SpaceGrotesk-Medium;
+    src: url('../fonts/SpaceGrotesk-Medium.ttf') format("truetype")
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 1680px;
+    position: relative;
+
+
+
+}
+
+@media (max-width: 5120px) {
+    .container-new-big {
+        max-width: 100%;
+        padding: 0px 80px;
+    }
+}
+
+@media (max-width: 2000px) {
+    .container-new-big {
+        max-width: 100%;
+        padding: 0px 80px;
+    }
+}
+
+@media (max-width: 1800px) {
+    .container-new-big {
+        max-width: 100%;
+        padding: 0px 80px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .container-new-big {
+        max-width: 100%;
+        padding: 0px 80px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .container-new-big {
+        max-width: 100%;
+        padding: 0px 80px;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .container-new-big {
+        padding: 0 60px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .container-new-big {
+        padding: 0 40px;
+    }
+
+    .navbar_baner_section .aries_logo {
+        bottom: -280px;
+    }
+
+}
+
+@media only screen and (max-width: 560px) {
+    .container-new-big {
+        padding: 0 20px;
+    }
+}
+
+
+/* Certificate-sec */
+.Certificate-sec {
+ border: 2px solid black;
+height: 100%;
+width: 100%;
+background-repeat: no-repeat;
+background-size: contain;
+background-position:left center;
+position: relative;
+
+
+}
+
+.Certificate-sec .content {
+    text-align: center;
+    top: 15%;
+    padding-top: 120px;
+}
+
+.Certificate-sec .content .logo {
+    height: 60px;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.Certificate-sec .content .logo img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.Certificate-sec .content h2 {
+    margin-top: 30px;
+    font-family: OpenSans-Medium;
+    font-weight: 500;
+    font-size: 40px;
+    color: #1A1A1A;
+
+}
+
+.Certificate-sec .content .paragraph-one {
+    font-family: OpenSans-Regular;
+    font-size: 22px;
+    color: #363636;
+    margin-top: 30px;
+}
+
+.Certificate-sec .content h1 {
+    color: #1A1A1A;
+    font-family: OpenSans-Bold;
+    font-size: 40px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.Certificate-sec .content .paragraph-two {
+    font-family: OpenSans-Regular;
+    font-size: 18px;
+    color: #363636;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.Certificate-sec .content .signature {
+    height: 60px;
+    width: 130px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.Certificate-sec .content .signature img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.Certificate-sec .content .signature::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: #1A1A1A;
+    width: 250px;
+    bottom: -20%;
+    left: -55%;
+}
+.Certificate-sec .content h3 {
+    margin-top: 30px;
+    font-family: OpenSans-Medium;
+    font-weight: 600;
+    font-size: 25px;
+    color: #1A1A1A;
+}
+.Certificate-sec .content .paragraph-three {
+    font-family: OpenSans-Regular;
+    font-size: 22px;
+    color: #363636;
+    line-height: 1.7;
+}
+  </style>
 </head>
 <body>
-<div class="Certificate-sec">
+<div class="Certificate-sec" style="background-image: url('{{certTemplate_Base64}}');" >
   <div class="content">
     <div class="logo">
-      <img src="/images/apj-logo.png">
+      <img src="{{imageBase64}}">
     </div>
     <h2>Certificate of Completion</h2>
     <p class="paragraph-one">This certificate is awarded to</p>
-    <h1 id="headingname">{{cousers.name}}</h1>
-    <p class="paragraph-two">has successfully completed the <span id="duration">{{cousers.duration}}</span><strong> Full Stack Development Course</strong><br/> at Dr APJ Dream Tech from <span id="start">{{cousers.startdate}}</span>  to <span  id="end">{{cousers.enddate}}</span>.<br/>
+    <h1 id="headingname">{{name}}</h1>
+    <p class="paragraph-two">has successfully completed the <span id="duration">{{duration}}</span><strong> Full Stack Development Course</strong><br/> at Dr APJ Dream Tech from <span id="start">{{startDate}}</span>  to <span  id="end">{{endDate}}</span>.<br/>
       We commend their dedication and hard work throughout the program.</p>
 <div class="signature">
-  <img src="/images/founder_signature.png" width="200" height="200">
-</div>
+  <img src="{{founderSign_Base64}}">
+</div >
       <h3>Venkatesan Chandhirasekar</h3>
       <p class="paragraph-three">Founder & CEO</p>
   </div>
 </div>
 
 </div>
-  <script src="assets/js/jquery.min.js"></script>
+  {{!-- <script src="assets/js/jquery.min.js"></script>
   <script src="assets/bootstrap/js/popper.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
-{{!-- <script>
-let name=localStorage.getItem("username");
-console.log("--name output--",name)
-let headingname = document.getElementById("headingname").textContent;
-if (headingname.includes("[name]")) {
-        let replaced =headingname.replace("[name]",name);
-            document.getElementById("headingname").textContent =replaced;
-        }
-        else{
-            document.getElementById("headingname").textContent = ''
-
-        }
-let startdate=localStorage.getItem("startdate");
-let enddate=localStorage.getItem("enddate");
-document.getElementById("start").textContent=startdate;
-    document.getElementById("end").textContent=enddate;
-
-
-     if(startdate){
-let startDate = new Date(startdate);
-if(enddate){
-     let endDate = new Date(enddate);
-    let totalMonths = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
-    let totalDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
-    if (endDate.getDate() < startDate.getDate()) {
-        totalMonths--;
-    }
-    let output = totalMonths >= 1 ? `${totalMonths}-months` : `${totalDays}-days`;
-    document.getElementById("duration").textContent = output;
-}
-</script> --}}
-<script>
   <script>
+  
     let name = localStorage.getItem("username");
     let startdate = localStorage.getItem("startdate");
     let enddate = localStorage.getItem("enddate");
@@ -114,6 +292,9 @@ if(enddate){
     } else {
         document.getElementById("duration").textContent = "[duration]";
     }
-</script>
+</script> --}}
+</body>
+</html>
 
-</script>
+
+
